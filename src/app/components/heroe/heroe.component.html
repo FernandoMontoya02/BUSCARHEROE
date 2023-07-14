@@ -1,0 +1,22 @@
+<h1>Nombre del heroe <small>fecha de aparición</small>></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{heroe.img}}" alt="">
+        <br><br>
+        <a href="heroes" class="btn btn btn-outline-danger btn-block"> Regresar</a>
+    </div>
+    <div class="col-md-8">
+        <h1> {{heroe.nombre}}</h1>
+        <br>
+        <p>
+            {{heroe.bio}}
+        </p>
+        <div *ngIf="heroe.casa === 'Marvel'; else DC">
+            <img src="assets/img/logoMarvel.png" width="300" height="200" alt="">
+          </div>
+          <ng-template #DC>
+            <img src="assets/img/logoDC.png" width="300" height="300" alt="">
+          </ng-template>
+    </div>
+</div>
